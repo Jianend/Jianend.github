@@ -120,7 +120,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">3</span></a>
 
   </li>
   </ul>
@@ -305,7 +305,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">3</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -336,7 +336,58 @@
       <div class="footer-inner">
         
 
-        
+        <!-- 网站运行计时统计 start-->
+
+<center>
+
+<span id="momk"></span><span id="momk" style="color: #ff0000;"></span>
+
+<script type="text/javascript">
+
+    function NewDate(str) {
+
+        str = str.split('-');
+
+        var date = new Date();
+
+        date.setUTCFullYear(str[0], str[1] - 1, str[2]);
+
+        date.setUTCHours(0, 0, 0, 0);
+
+        return date;
+
+    }
+    function momxc() {
+
+        var birthDay = NewDate("2021-9-30");//设置建站时间
+
+        var today = new Date();
+
+        var timeold = today.getTime() - birthDay.getTime();
+
+        var sectimeold = timeold / 1000
+
+        var secondsold = Math.floor(sectimeold);
+
+        var msPerDay = 24 * 60 * 60 * 1000; var e_daysold = timeold / msPerDay;
+
+        var daysold = Math.floor(e_daysold);
+
+        var e_hrsold = (daysold - e_daysold) * -24;
+
+        var hrsold = Math.floor(e_hrsold);
+
+        var e_minsold = (hrsold - e_hrsold) * -60;
+
+        var minsold = Math.floor((hrsold - e_hrsold) * -60); var seconds = Math.floor((minsold - e_minsold) * -60).toString();
+
+        document.getElementById("momk").innerHTML = "本站已安全运行" + daysold + "天" + hrsold + "小时" + minsold + "分" + seconds + "秒";
+
+        setTimeout(momxc, 1000);
+
+    } momxc();
+</script>
+
 
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   
@@ -365,7 +416,7 @@
       </div>
     </footer>
   </div>
-
+  
   
   <script src="/lib/anime.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
